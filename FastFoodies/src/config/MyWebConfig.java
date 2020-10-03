@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "edu.osu.cse5234.controller" })
+@ComponentScan(basePackages = { "controller" })
 public class MyWebConfig extends WebMvcConfigurerAdapter {
 
 	@Override
