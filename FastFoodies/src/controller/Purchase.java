@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import model.Item;
 import model.Order;
 import model.PaymentInfo;
 import model.ShippingInfo;
@@ -18,6 +19,24 @@ public class Purchase {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewOrderEntryForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		Order order = new Order();
+		
+		Item[] items = new Item[5];
+		items[0].setName("Hamburger");
+		items[0].setPrice("5.75");
+		items[1].setName("Cheeseburger");
+		items[1].setPrice("6.25");
+		items[2].setName("French Fries");
+		items[2].setPrice("1.75");
+		items[3].setName("Coca-Cola");
+		items[3].setPrice("1.00");
+		items[4].setName("Sprite");
+		items[4].setPrice("1.00");
+		
+		order.setItems(items);
+		
+		request.setAttribute("order", order);
+		
 		return "OrderEntryForm";
 	}
 	
@@ -49,5 +68,10 @@ public class Purchase {
 	public String submitPayment(@ModelAttribute("shipping") ShippingInfo shipping, HttpServletRequest request) {
 		request.getSession().setAttribute("shipping", shipping);
 		return "redirect:/purchase/viewOrder";
+	}
+	
+	@RequestMapping(path = "/confirmOrder", method = RequestMethod.GET)
+	public String confirmOrder(HttpServletRequest request, HttpServletResponse response) {
+		return "redirect:/purchase/confirmation";
 	}
 }
