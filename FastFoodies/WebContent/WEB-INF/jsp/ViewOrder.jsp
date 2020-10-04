@@ -7,10 +7,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>View Order</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: center;
+}
+</style>
 </head>
 <body>
+	<form:form modelAttribute="order" method="get" action="purchase/confirmation">
     <div>
-		<table border="solid 1px black" width="300px">
+		<table>
    			<tr>
     			<th>Item</th>
     			<th>Price</th>
@@ -20,14 +31,16 @@
 				<tr>
 					<td><form:input path="items[${loop.index}].name" readonly="true" /></td>
 					<td>$<form:input path="items[${loop.index}].price" readonly="true" /></td>
-					<td><form:input path="items[${loop.index}].quantity" /></td>
+					<td><form:input path="items[${loop.index}].quantity" readonly="true" /></td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
+	</form:form> 
+	<form:form modelAttribute="payment" method="get" action="purchase/confirmation">
 	<div>
 		Payment Information
-		<table border="solid 1px black" width="300px">
+		<table>
 			<tr>
 				<th>Name</th>
 				<th>Card Number</th>
@@ -35,16 +48,18 @@
 				<th>CVV</th>
 			</tr>
 			<tr>
-				<td><form:input path="payment.cardHolderName" readonly="true" /></td>
-				<td><form:input path="payment.creditCardNumber" readonly="true" /></td>
-				<td><form:input path="payment.expirationDate" readonly="true" /></td>
-				<td><form:input path="payment.cvvCode" readonly="true" /></td>
+				<td><form:input path="cardHolderName" readonly="true" /></td>
+				<td><form:input path="creditCardNumber" readonly="true" /></td>
+				<td><form:input path="expirationDate" readonly="true" /></td>
+				<td><form:input path="cvvCode" readonly="true" /></td>
 			</tr>
 		</table>
 	</div>
+	</form:form>
+	<form:form modelAttribute="shipping" method="get" action="purchase/confirmation">
 	<div>
 		Shipping Information
-		<table border="solid 1px black" width="300px">
+		<table>
 			<tr>
 				<th>Name</th>
 				<th>Address (Line 1)</th>
@@ -54,17 +69,18 @@
 				<th>Zip</th>
 			</tr>
 			<tr>
-				<td><form:input path="shipping.name" readonly="true" /></td>
-				<td><form:input path="payment.addressLine1" readonly="true" /></td>
-				<td><form:input path="payment.addressLine2" readonly="true" /></td>
-				<td><form:input path="payment.city" readonly="true" /></td>
-				<td><form:input path="payment.state" readonly="true" /></td>
-				<td><form:input path="payment.zip" readonly="true" /></td>
+				<td><form:input path="name" readonly="true" /></td>
+				<td><form:input path="addressLine1" readonly="true" /></td>
+				<td><form:input path="addressLine2" readonly="true" /></td>
+				<td><form:input path="city" readonly="true" /></td>
+				<td><form:input path="state" readonly="true" /></td>
+				<td><form:input path="zip" readonly="true" /></td>
 			</tr>
 		</table>
 	</div>
-	<form:form modelAttribute="order" method="post" action="purchase/submitItems">
-		<input type="submit" value="Purchase">
+	</form:form>
+	<form:form method="get" action="confirmation">
+		<input type="submit" value="Confirm order">
 	</form:form>
 </body>
 </html>

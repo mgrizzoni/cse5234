@@ -38,7 +38,7 @@ th, td {
 <td><form:input path="zip" /></td>
 </tr>
 <tr>
-<td colspan="2"><input type="submit" value="Shipping"></td>
+<td colspan="2"><input type="submit" value="Submit"></td>
 </tr>
 </table>
 </form:form>

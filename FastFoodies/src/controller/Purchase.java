@@ -22,6 +22,9 @@ public class Purchase {
 		Order order = new Order();
 		
 		Item[] items = new Item[5];
+		for(int i = 0; i < 5; i++) {
+			items[i] = new Item();
+		}
 		items[0].setName("Hamburger");
 		items[0].setPrice("5.75");
 		items[1].setName("Cheeseburger");
@@ -70,8 +73,21 @@ public class Purchase {
 		return "redirect:/purchase/viewOrder";
 	}
 	
-	@RequestMapping(path = "/confirmOrder", method = RequestMethod.GET)
-	public String confirmOrder(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping(path = "/viewOrder", method = RequestMethod.GET)
+	public String viewOrder(HttpServletRequest request, HttpServletResponse response) {
+		request.setAttribute("shipping", request.getSession().getAttribute("shipping"));
+		request.setAttribute("payment", request.getSession().getAttribute("payment"));
+		request.setAttribute("order", request.getSession().getAttribute("order"));
+		return "ViewOrder";
+	}
+	
+	@RequestMapping(path = "/confirmOrder", method = RequestMethod.POST)
+	public String confirmOrder(HttpServletRequest request) {
 		return "redirect:/purchase/confirmation";
+	}
+	
+	@RequestMapping(path = "/confirmation", method = RequestMethod.GET)
+	public String confirmation(HttpServletRequest request, HttpServletResponse response) {
+		return "Confirmation";
 	}
 }

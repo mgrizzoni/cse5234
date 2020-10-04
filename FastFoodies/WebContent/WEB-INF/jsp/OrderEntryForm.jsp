@@ -7,10 +7,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Order Entry</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: center;
+}
+</style>
 </head>
 <body>
 	<form:form modelAttribute="order" method="post" action="purchase/submitItems">
-    	<table border="solid 1px black" width="300px">
+    	<table>
     		<tr>
     			<th>Item</th>
     			<th>Price</th>

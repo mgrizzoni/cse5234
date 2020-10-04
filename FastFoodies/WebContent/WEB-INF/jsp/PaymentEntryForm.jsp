@@ -30,9 +30,9 @@ th, td {
 <td>CVV Code:</td>
 <td><form:input path="cvvCode" /></td>
 <td>Card Holder Name:</td>
-<td><form:input path="cardHolderNumber" /></td>
+<td><form:input path="cardHolderName" /></td>
 </tr>
-<tr><td colspan="2"><input type="submit" value="Payment"></td>
+<tr><td colspan="2"><input type="submit" value="Submit payment"></td>
 </tr>
 </table>
 </form:form>

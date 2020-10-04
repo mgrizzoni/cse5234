@@ -12,6 +12,6 @@
 <h2>Order Confirmed!</h2>
 <p>Thank you for choosing us to place your order.</p>
 <p>The confirmation number for your order is #52342020. 
-A delivery representative will be assigned to your order soon</p>
+A delivery representative will be assigned to your order soon.</p>
 </body>
 </html>
