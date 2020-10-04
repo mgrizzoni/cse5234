@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Order Confirmation</title>
 </head>
 <body>
-
+<h2>Order Confirmed!</h2>
+<p>Thank you for choosing us to place your order.</p>
+<p>The confirmation number for your order is #52342020. 
+A delivery representative will be assigned to your order soon</p>
 </body>
 </html>
