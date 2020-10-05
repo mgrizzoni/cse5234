@@ -11,10 +11,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/")
 class Home {
 	
-	@RequestMapping(method = RequestMethod.GET)
-	public String viewOrderEntryForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(path="/", method = RequestMethod.GET)
+	public String home(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		return "home";
+	}
+	
+	@RequestMapping(path="/home", method = RequestMethod.GET)
+	public String toHome(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		return "home";
+	}
+	
+	@RequestMapping(path="/about", method = RequestMethod.GET)
+	public String aboutUs(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		return "AboutUs";
+	}
+	
+	@RequestMapping(path="/contact", method = RequestMethod.GET)
+	public String viewOrderEntryForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		return "ContactUs";
 	}
 
 }
