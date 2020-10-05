@@ -25,10 +25,16 @@ th, td {
 <tr>
 <td>Credit Card Number:</td>
 <td><form:input path="creditCardNumber" /></td>
+</tr>
+<tr>
 <td>Expiration Date:</td>
 <td><form:input path="expirationDate" /></td>
+</tr>
+<tr>
 <td>CVV Code:</td>
 <td><form:input path="cvvCode" /></td>
+</tr>
+<tr>
 <td>Card Holder Name:</td>
 <td><form:input path="cardHolderName" /></td>
 </tr>

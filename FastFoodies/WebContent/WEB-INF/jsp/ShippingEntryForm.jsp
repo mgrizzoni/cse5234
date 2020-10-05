@@ -26,10 +26,14 @@ th, td {
 <tr>
 <td>Name:</td>
 <td><form:input path="name" /></td>
+</tr>
+<tr>
 <td>Address Line 1:</td>
 <td><form:input path="addressLine1" /></td>
 <td>Address Line 2:</td>
 <td><form:input path="addressLine2" /></td>
+</tr>
+<tr>
 <td>City:</td>
 <td><form:input path="city" /></td>
 <td>State:</td>
