@@ -7,19 +7,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Payment Details</title>
-<style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 5px;
-  text-align: center;
-}
-</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+	<div class="inner">
 	<br>
 <form:form modelAttribute="payment" method="post" action="submitPayment">
 <caption><b>Enter Payment Information:</b></caption>
@@ -44,6 +37,7 @@ th, td {
 </tr>
 </table>
 </form:form>
+</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
