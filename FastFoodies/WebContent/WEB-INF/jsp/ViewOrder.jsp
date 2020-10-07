@@ -19,8 +19,11 @@ th, td {
 </style>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
+	<br>
 	<form:form modelAttribute="order" method="get" action="purchase/confirmation">
     <div>
+    <caption><b>Order Details:</b></caption>
 		<table>
    			<tr>
     			<th>Item</th>
@@ -38,8 +41,9 @@ th, td {
 	</div>
 	</form:form> 
 	<form:form modelAttribute="payment" method="get" action="purchase/confirmation">
+	<br>
 	<div>
-		Payment Information
+		<caption><b>Payment Details:</b></caption>
 		<table>
 			<tr>
 				<th>Name</th>
@@ -57,8 +61,9 @@ th, td {
 	</div>
 	</form:form>
 	<form:form modelAttribute="shipping" method="get" action="purchase/confirmation">
+	<br>
 	<div>
-		Shipping Information
+		<caption><b>Shipping Details:</b></caption>
 		<table>
 			<tr>
 				<th>Name</th>
@@ -78,9 +83,11 @@ th, td {
 			</tr>
 		</table>
 	</div>
+	<br>
 	</form:form>
-	<form:form method="get" action="confirmation">
-		<input type="submit" value="Confirm order">
+	<form:form method="get" style="justify-content: center" action="confirmation">
+		<input type="submit" style="justify-content: center" value="Confirm order">
 	</form:form>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

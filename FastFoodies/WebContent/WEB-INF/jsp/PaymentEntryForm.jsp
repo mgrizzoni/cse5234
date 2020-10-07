@@ -19,9 +19,11 @@ th, td {
 </style>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
+	<br>
 <form:form modelAttribute="payment" method="post" action="submitPayment">
+<caption><b>Enter Payment Information:</b></caption>
 <table>
-<caption><b>Enter Payment Information</b></caption>
 <tr>
 <td>Credit Card Number:</td>
 <td><form:input path="creditCardNumber" /></td>
@@ -42,5 +44,6 @@ th, td {
 </tr>
 </table>
 </form:form>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

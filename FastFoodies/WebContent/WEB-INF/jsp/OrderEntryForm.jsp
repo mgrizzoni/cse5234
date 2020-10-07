@@ -19,6 +19,8 @@ th, td {
 </style>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
+	<br>
 	<form:form modelAttribute="order" method="post" action="purchase/submitItems">
     	<table>
     		<tr>
@@ -38,5 +40,6 @@ th, td {
 	  		</tr>
     	</table>
 	</form:form>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

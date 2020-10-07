@@ -8,8 +8,8 @@
 </head>
 <body>
 	<div class="bg-light">
-		<h1>Fast Foodies</h1>
-		<h6 class="text-muted">The food delivery service that sends fast food straight to your front door!</h6>
+		<h1 style="text-align : center">Fast Foodies</h1>
+		<h6 class="text-muted" style="text-align : center">The food delivery service that sends fast food straight to your front door!</h6>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>

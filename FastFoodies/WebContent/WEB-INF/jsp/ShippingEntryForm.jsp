@@ -20,9 +20,11 @@ th, td {
 </style>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
+	<br>
 <form:form modelAttribute="shipping" method="post" action="submitShipping">
+<caption><b>Enter Shipping Details:</b></caption>
 <table>
-<caption><b>Enter Shipping Details</b></caption>
 <tr>
 <td>Name:</td>
 <td><form:input path="name" /></td>
@@ -46,6 +48,7 @@ th, td {
 </tr>
 </table>
 </form:form>
+	<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 </html>
