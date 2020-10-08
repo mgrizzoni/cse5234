@@ -9,15 +9,13 @@
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
 <body>
-	<div class="bg-light">
-		<jsp:include page="header.jsp"></jsp:include>
-		<div class="inner">
-			<br>
-			<p>Thank you for choosing Fast Foodies! Our mission is to deliver hot, fresh meals straight to your front door.</p>
-			<p>Select "Purchase" in the navigation menu to start your order now.</p>
-			<br>
-		</div>
-		<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="header.jsp"></jsp:include>
+	<div class="inner">
+		<br>
+		<p>Thank you for choosing Fast Foodies! Our mission is to deliver hot, fresh meals straight to your front door.</p>
+		<p>Select "Purchase" in the navigation menu to start your order now.</p>
+		<br>
 	</div>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

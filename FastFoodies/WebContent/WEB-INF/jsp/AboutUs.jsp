@@ -9,18 +9,16 @@
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
 <body>
-	<div class="bg-light">
-		<jsp:include page="header.jsp"></jsp:include>
-		<div class="inner">
-			<h5>Phani Kumar Atyam</h5>
-			<h6 class="text-muted">Co-Founder</h6>
-			<p></p>
-			<br>
-			<h5>Michael Rizzoni</h5>
-			<h6 class="text-muted">Co-Founder</h6>
-			<p>Michael is a senior in Computer Science and Engineering at The Ohio State University. Michael has research experience in machine learning and is in his third year as a TA. When he's not hard at work, he's playing music, cooking, or watching TV with his roommates.</p>
-		</div>
-		<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="header.jsp"></jsp:include>
+	<div class="inner">
+		<h5>Phani Kumar Atyam</h5>
+		<h6 class="text-muted">Co-Founder</h6>
+		<p></p>
+		<br>
+		<h5>Michael Rizzoni</h5>
+		<h6 class="text-muted">Co-Founder</h6>
+		<p>Michael is a senior in Computer Science and Engineering at The Ohio State University. Michael has research experience in machine learning and is in his third year as a TA. When he's not hard at work, he's playing music, cooking, or watching TV with his roommates.</p>
 	</div>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
