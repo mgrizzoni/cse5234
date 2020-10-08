@@ -19,31 +19,42 @@ th, td {
 </style>
 </head>
 <body>
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  	<!-- Load our React component. -->
+  	<script src="validate.js"></script>
+  	
 	<jsp:include page="header.jsp"></jsp:include>
 	<br>
-<form:form modelAttribute="payment" method="post" action="submitPayment">
-<caption><b>Enter Payment Information:</b></caption>
-<table>
-<tr>
-<td>Credit Card Number:</td>
-<td><form:input path="creditCardNumber" /></td>
-</tr>
-<tr>
-<td>Expiration Date:</td>
-<td><form:input path="expirationDate" /></td>
-</tr>
-<tr>
-<td>CVV Code:</td>
-<td><form:input path="cvvCode" /></td>
-</tr>
-<tr>
-<td>Card Holder Name:</td>
-<td><form:input path="cardHolderName" /></td>
-</tr>
-<tr><td colspan="2"><input type="submit" value="Submit payment"></td>
-</tr>
-</table>
-</form:form>
+	<form:form modelAttribute="payment" id="payment" method="post" action="submitPayment">
+	<caption><b>Enter Payment Information:</b></caption>
+		<table>
+			<tr>
+				<td>Credit Card Number:</td>
+				<td><form:input id="number" path="creditCardNumber" /></td>
+				<td><font id="numberError" style="color: red">${numberError}</font></td> 
+			</tr>
+			<tr>
+				<td>Expiration Date:</td>
+				<td><form:input id="date" path="expirationDate" /></td>
+				<td><font id="daterError" style="color: red">${numberError}</font></td> 
+			</tr>
+			<tr>
+				<td>CVV Code:</td>
+				<td><form:input id="code" path="cvvCode" /></td>
+				<td><font id="codeError" style="color: red">${codeError}</font></td> 
+			</tr>
+			<tr>
+				<td>Card Holder Name:</td>
+				<td><form:input id="name" path="cardHolderName" /></td>
+				<td><font id="nameError" style="color: red">${nameError}</font></td> 
+			</tr>
+				<tr><td colspan="2"><input type="submit" value="Submit payment"></td>
+			</tr>
+		</table>
+	</form:form>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

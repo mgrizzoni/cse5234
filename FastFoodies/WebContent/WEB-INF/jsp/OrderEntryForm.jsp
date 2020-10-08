@@ -19,9 +19,10 @@ th, td {
 </style>
 </head>
 <body>
+	
 	<jsp:include page="header.jsp"></jsp:include>
 	<br>
-	<form:form modelAttribute="order" method="post" action="purchase/submitItems">
+	<form:form modelAttribute="order" id="items" method="post" action="purchase/submitItems">
     	<table>
     		<tr>
     			<th>Item</th>
@@ -30,9 +31,9 @@ th, td {
     		</tr>
 			<c:forEach items="${order.items}" var="item" varStatus="loop">
 				<tr>
-					<td><form:input path="items[${loop.index}].name" readonly="true" /></td>
-					<td>$<form:input path="items[${loop.index}].price" readonly="true" /></td>
-					<td><form:input path="items[${loop.index}].quantity" /></td>
+					<td><form:input id="name" path="items[${loop.index}].name" readonly="true" /></td>
+					<td>$<form:input id="price" path="items[${loop.index}].price" readonly="true" /></td>
+					<td><form:input id="price" path="items[${loop.index}].quantity" /></td>
 				</tr>
 			</c:forEach>
 	  		<tr>
