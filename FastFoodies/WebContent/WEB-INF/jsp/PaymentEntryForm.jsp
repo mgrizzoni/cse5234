@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Payment Details</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<link rel="stylesheet" type="text/css" href="/FastFoodies/css/mystyle.css">
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
