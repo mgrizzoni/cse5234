@@ -13,7 +13,7 @@
 	<div class="inner">
 		<h5>Phani Kumar Atyam</h5>
 		<h6 class="text-muted">Co-Founder</h6>
-		<p></p>
+		<p>Phani is currently pursuing his Master's degree in Computer Science and Engineering. Phani's interests mostly lie in developing web applications and has two years of work experience in software development. You can find him sketching or hanging out with friends when he's free!</p>
 		<br>
 		<h5>Michael Rizzoni</h5>
 		<h6 class="text-muted">Co-Founder</h6>
