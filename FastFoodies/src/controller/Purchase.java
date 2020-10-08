@@ -90,4 +90,5 @@ public class Purchase {
 	public String confirmation(HttpServletRequest request, HttpServletResponse response) {
 		return "Confirmation";
 	}
+	
 }

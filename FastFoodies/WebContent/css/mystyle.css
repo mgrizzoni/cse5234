@@ -4,7 +4,7 @@ html {
 	color: #2E2E2E;
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: #F2F2F2;
-	max-width: 980px;
+	height: 100%;
 }
 
 body {
@@ -14,7 +14,8 @@ body {
 }
 
 p {
-	color: #800000;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .header {
@@ -41,6 +42,9 @@ p {
 	color:#fff;
 }
 
+.inner {
+	padding: 5px;
+}
 
 .prodheading {
 	width: 100%;
@@ -76,6 +80,7 @@ td.right-col {
 }
 
 th {
+	padding: 2px;
 	color: #424242;
 	border:1pt solid #808080;
 }

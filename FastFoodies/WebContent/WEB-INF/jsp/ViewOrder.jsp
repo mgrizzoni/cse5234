@@ -7,19 +7,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>View Order</title>
-<style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 5px;
-  text-align: center;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="/FastFoodies/css/mystyle.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+	<div class="inner">
 	<br>
 	<form:form modelAttribute="order" method="get" action="purchase/confirmation">
     <div>
@@ -88,6 +81,7 @@ th, td {
 	<form:form method="get" style="justify-content: center" action="confirmation">
 		<input type="submit" style="justify-content: center" value="Confirm order">
 	</form:form>
+	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

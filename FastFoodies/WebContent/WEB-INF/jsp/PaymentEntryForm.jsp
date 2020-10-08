@@ -7,16 +7,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Payment Details</title>
-<style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 5px;
-  text-align: center;
-}
-</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/FastFoodies/css/mystyle.css">
 </head>
 <body>
 	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
@@ -27,34 +19,36 @@ th, td {
   	<script src="validate.js"></script>
   	
 	<jsp:include page="header.jsp"></jsp:include>
-	<br>
-	<form:form modelAttribute="payment" id="payment" method="post" action="submitPayment">
-	<caption><b>Enter Payment Information:</b></caption>
-		<table>
-			<tr>
-				<td>Credit Card Number:</td>
-				<td><form:input id="number" path="creditCardNumber" /></td>
-				<td><font id="numberError" style="color: red">${numberError}</font></td> 
-			</tr>
-			<tr>
-				<td>Expiration Date:</td>
-				<td><form:input id="date" path="expirationDate" /></td>
-				<td><font id="daterError" style="color: red">${numberError}</font></td> 
-			</tr>
-			<tr>
-				<td>CVV Code:</td>
-				<td><form:input id="code" path="cvvCode" /></td>
-				<td><font id="codeError" style="color: red">${codeError}</font></td> 
-			</tr>
-			<tr>
-				<td>Card Holder Name:</td>
-				<td><form:input id="name" path="cardHolderName" /></td>
-				<td><font id="nameError" style="color: red">${nameError}</font></td> 
-			</tr>
-				<tr><td colspan="2"><input type="submit" value="Submit payment"></td>
-			</tr>
-		</table>
-	</form:form>
+	<div class="inner">
+		<br>
+		<form:form modelAttribute="payment" id="payment" method="post" action="submitPayment">
+		<caption><b>Enter Payment Information:</b></caption>
+			<table>
+				<tr>
+					<td>Credit Card Number:</td>
+					<td><form:input id="number" path="creditCardNumber" /></td>
+					<td><font id="numberError" style="color: red">${numberError}</font></td> 
+				</tr>
+				<tr>
+					<td>Expiration Date:</td>
+					<td><form:input id="date" path="expirationDate" /></td>
+					<td><font id="daterError" style="color: red">${numberError}</font></td> 
+				</tr>
+				<tr>
+					<td>CVV Code:</td>
+					<td><form:input id="code" path="cvvCode" /></td>
+					<td><font id="codeError" style="color: red">${codeError}</font></td> 
+				</tr>
+				<tr>
+					<td>Card Holder Name:</td>
+					<td><form:input id="name" path="cardHolderName" /></td>
+					<td><font id="nameError" style="color: red">${nameError}</font></td> 
+				</tr>
+					<tr><td colspan="2"><input type="submit" value="Submit payment"></td>
+				</tr>
+			</table>
+		</form:form>
+	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
