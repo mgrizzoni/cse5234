@@ -20,7 +20,7 @@ function validateName(form) {
 	
 	error.innerHTML = "";
 	
-	if (name === null || name === "undefined" || name.length === 0) {
+	if (name === null || name.length === 0) {
 		error.innerHTML = "Invalid name";
 	}
 	
@@ -34,7 +34,7 @@ function validateNumber(form) {
 	
 	error.innerHTML = "";
 	
-	if (number === null || number === "undefined" || number.length === 0) {
+	if (number === null || number.length === 0) {
 		error.innerHTML = "Invalid number";
 	}
 	else if (number.length !== 16) {
@@ -52,10 +52,10 @@ function validateCode(form) {
 	
 	error.innerHTML = "";
 	
-	if (code === null || code === "undefined" || code.length === 0) {
+	if (code === null || code.length === 0) {
 		error.innerHTML = "Invalid CVV Code";
 	}
-	else if (number.length !== 3) {
+	else if (code.length > 3 || code.length < 3) {
 		error.innerHTML = "CVV Code should be of 3 digits";
 	}
 	
@@ -69,10 +69,10 @@ function validateDate(form) {
 	
 	error.innerHTML = "";
 	
-	if (date === null || date === "undefined" || date.length === 0) {
+	if (date === null || date.length === 0) {
 		error.innerHTML = "Invalid Date";
 	}
-	else if (number.length !== 5) {
+	else if (date.length !== 5) {
 		error.innerHTML = "Invalid Date format";
 	}
 	

@@ -26,26 +26,30 @@
 		<caption><b>Enter Payment Information:</b></caption>
 			<table>
 				<tr>
-					<td>Credit Card Number:</td>
+					<td>Credit Card Number*</td>
 					<td><form:input id="number" path="creditCardNumber" /></td>
 					<td><font id="numberError" style="color: red"></font></td> 
 				</tr>
 				<tr>
-					<td>Expiration Date:</td>
+					<td>Expiration Date*</td>
 					<td><form:input id="date" path="expirationDate" /></td>
 					<td><font id="dateError" style="color: red"></font></td> 
 				</tr>
 				<tr>
-					<td>CVV Code:</td>
+					<td>CVV Code*</td>
 					<td><form:input id="code" path="cvvCode" /></td>
 					<td><font id="codeError" style="color: red"></font></td> 
 				</tr>
 				<tr>
-					<td>Card Holder Name:</td>
+					<td>Card Holder Name*</td>
 					<td><form:input id="name" path="cardHolderName" /></td>
 					<td><font id="nameError" style="color: red"></font></td> 
 				</tr>
-					<tr><td colspan="2"><input type="submit" onclick="return validate()"value="Submit payment"></td>
+				<tr>
+					<td style="color: red">* indicates required value</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" onclick="return validate()"value="Submit payment"></td>
 				</tr>
 			</table>
 		</form:form>

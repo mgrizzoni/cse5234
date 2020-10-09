@@ -21,7 +21,7 @@ function validateName(form) {
 	
 	error.innerHTML = "";
 	
-	if (name === null || name === "undefined" || name.length === 0) {
+	if (name === null || name.length === 0) {
 		error.innerHTML = "Name cannot be empty";
 	}
 	
@@ -35,7 +35,7 @@ function validateAddress(form) {
 	
 	error.innerHTML = "";
 	
-	if (address === null || address === "undefined" || address.length === 0) {
+	if (address === null || address.length === 0) {
 		error.innerHTML = "Address cannot be empty";
 	}	
 	
@@ -49,7 +49,7 @@ function validateCity(form) {
 	
 	error.innerHTML = "";
 	
-	if (city === null || city === "undefined" || city.length === 0) {
+	if (city === null || city.length === 0) {
 		error.innerHTML = "City cannot be empty";
 	}
 	
@@ -63,7 +63,7 @@ function validateState(form) {
 	
 	error.innerHTML = "";
 	
-	if (state === null || state === "undefined" || state.length === 0) {
+	if (state === null || state.length === 0) {
 		error.innerHTML = "State cannot be empty";
 	}	
 	
@@ -77,12 +77,12 @@ function validateZip(form) {
 	
 	error.innerHTML = "";
 	
-	if (zip === null || zip === "undefined" || zip.length === 0) {
+	if (zip.length === null) {
 		error.innerHTML = "Zip cannot be empty";
 	}
-	else if (number.length !== 5) {
-		error.innerHTML = "Invalid Zip format";
-	}
+	/*else if (zip.length !== 5) {
+		error.innerHTML = "Invalid Zip format";	
+	}*/
 	
 	
 	return error.innerHTML !== "";
