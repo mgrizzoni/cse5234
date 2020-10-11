@@ -22,7 +22,7 @@ function validateName(form) {
 	error.innerHTML = "";
 	
 	if (name === null || name.length === 0) {
-		error.innerHTML = "Invalid name";
+		error.innerHTML = "Name cannot be empty";
 	}
 	
 	return error.innerHTML !== "";
@@ -37,7 +37,7 @@ function validateNumber(form) {
 	
 	
 	if (number === null || number.length === 0) {
-		error.innerHTML = "Invalid number";
+		error.innerHTML = "Card number cannot be empty";
 	}
 	else if (isNaN(number)) {
 		error.innerHTML = "Card number must be a numeric value";
@@ -58,10 +58,10 @@ function validateCode(form) {
 	error.innerHTML = "";
 	
 	if (code === null || code.length === 0) {
-		error.innerHTML = "Invalid CVV Code";
+		error.innerHTML = "CVV Code cannot be empty";
 	}
 	else if (isNaN(code)) {
-		error.innerHTML = "Card number must be a numeric value";
+		error.innerHTML = "CVV Code must be a numeric value";
 	}
 	else if (code.length > 3 || code.length < 3) {
 		error.innerHTML = "CVV Code should be of 3 digits";
@@ -78,13 +78,13 @@ function validateMonth(form) {
 	error.innerHTML = "";
 	
 	if (month === null || month.length === 0) {
-		error.innerHTML = "Invalid Month";
+		error.innerHTML = "Month cannot be empty";
 	}
 	else if (isNaN(month)) {
-		error.innerHTML = "Card number must be a numeric value";
+		error.innerHTML = "Month must be a numeric value";
 	}
 	else if (parseInt(month) <= 0 || parseInt(month) >= 13) {
-		error.innerHTML = "Invalid Month format";
+		error.innerHTML = "Month number should be between 01 and 12";
 	}
 	
 	
@@ -99,13 +99,13 @@ function validateYear(form) {
 	error.innerHTML = "";
 	
 	if (year === null || year.length === 0) {
-		error.innerHTML = "Invalid Year";
+		error.innerHTML = "Year cannot be empty";
 	}
 	else if (isNaN(year)) {
-		error.innerHTML = "Card number must be a numeric value";
+		error.innerHTML = "Year must be a numeric value";
 	}
 	else if (parseInt(year) < 2020) {
-		error.innerHTML = "Invalid Year format";
+		error.innerHTML = "Year number should be more than or equal to 2020";
 	}
 	
 	
