@@ -1,11 +1,12 @@
 function validate() {
 	var f = document.getElementById("payment");
 	var hasNameError = validateName(f);
-	var hasDateError = validateDate(f);
+	var hasMonthError = validateMonth(f);
+	var hasYearError = validateYear(f);
 	var hasCodeError = validateCode(f);
 	var hasNumberError = validateNumber(f);
 	
-	if (hasNameError || hasDateError || hasCodeError || hasNumberError) {
+	if (hasNameError || hasMonthError || hasYearError || hasCodeError || hasNumberError) {
 		return false;
 	}
 	else {
@@ -32,10 +33,14 @@ function validateNumber(form) {
 	
 	var number = form["number"].value;
 	
-	error.innerHTML = "";
+	error.innerHTML = "";	
+	
 	
 	if (number === null || number.length === 0) {
 		error.innerHTML = "Invalid number";
+	}
+	else if (isNaN(number)) {
+		error.innerHTML = "Card number must be a numeric value";
 	}
 	else if (number.length !== 16) {
 		error.innerHTML = "Card number should be of 16 digits";
@@ -55,6 +60,9 @@ function validateCode(form) {
 	if (code === null || code.length === 0) {
 		error.innerHTML = "Invalid CVV Code";
 	}
+	else if (isNaN(code)) {
+		error.innerHTML = "Card number must be a numeric value";
+	}
 	else if (code.length > 3 || code.length < 3) {
 		error.innerHTML = "CVV Code should be of 3 digits";
 	}
@@ -62,18 +70,42 @@ function validateCode(form) {
 	return error.innerHTML !== "";
 }
 
-function validateDate(form) {
-	var error = document.getElementById("dateError");
+function validateMonth(form) {
+	var error = document.getElementById("monthError");
 	
-	var date = form["date"].value;
+	var month = form["month"].value;
 	
 	error.innerHTML = "";
 	
-	if (date === null || date.length === 0) {
-		error.innerHTML = "Invalid Date";
+	if (month === null || month.length === 0) {
+		error.innerHTML = "Invalid Month";
 	}
-	else if (date.length !== 5) {
-		error.innerHTML = "Invalid Date format";
+	else if (isNaN(month)) {
+		error.innerHTML = "Card number must be a numeric value";
+	}
+	else if (parseInt(month) <= 0 || parseInt(month) >= 13) {
+		error.innerHTML = "Invalid Month format";
+	}
+	
+	
+	return error.innerHTML !== "";
+}
+
+function validateYear(form) {
+	var error = document.getElementById("yearError");
+	
+	var year = form["year"].value;
+	
+	error.innerHTML = "";
+	
+	if (year === null || year.length === 0) {
+		error.innerHTML = "Invalid Year";
+	}
+	else if (isNaN(year)) {
+		error.innerHTML = "Card number must be a numeric value";
+	}
+	else if (parseInt(year) < 2020) {
+		error.innerHTML = "Invalid Year format";
 	}
 	
 	

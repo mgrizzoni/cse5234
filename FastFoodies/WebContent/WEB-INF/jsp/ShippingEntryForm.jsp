@@ -35,13 +35,15 @@
 				<tr>
 					<td>City*</td>
 					<td><form:input id="city" path="city" /></td>
+					<td><font id="cityError" style="color: red"></font></td>  
+				</tr>
+				<tr>
 					<td>State*</td>
 					<td><form:input id="state" path="state" /></td>
 					<td>Zip*</td>
 					<td><form:input id="zip" path="zip" /></td>
-					<td><font id="cityError" style="color: red"></font></td> 
 					<td><font id="stateError" style="color: red"></font></td> 
-					<td><font id="zipError" style="color: red"></font></td> 
+					<td><font id="zipError" style="color: red"></font></td>
 				</tr>
 				<tr>
 					<td style="color: red">* indicates required value</td>

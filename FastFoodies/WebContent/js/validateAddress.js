@@ -6,11 +6,11 @@ function validate() {
 	var hasStateError = validateState(f);
 	var hasZipError = validateZip(f);
 	
-	if (hasNameError || hasAddressError || hasCityError || hasStateError || hasZipError) {
-		return false;
+	if (hasNameError && hasAddressError && hasStateError && hasZipError && hasCityError) {
+		return true;
 	}
 	else {
-		return true;
+		return false;
 	}
 }
 
@@ -25,7 +25,7 @@ function validateName(form) {
 		error.innerHTML = "Name cannot be empty";
 	}
 	
-	return error.innerHTML !== "";
+	return error.innerHTML === "";
 }
 
 function validateAddress(form) {
@@ -39,7 +39,7 @@ function validateAddress(form) {
 		error.innerHTML = "Address cannot be empty";
 	}	
 	
-	return error.innerHTML !== "";
+	return error.innerHTML === "";
 }
 
 function validateCity(form) {
@@ -53,7 +53,7 @@ function validateCity(form) {
 		error.innerHTML = "City cannot be empty";
 	}
 	
-	return error.innerHTML !== "";
+	return error.innerHTML === "";
 }
 
 function validateState(form) {
@@ -67,7 +67,7 @@ function validateState(form) {
 		error.innerHTML = "State cannot be empty";
 	}	
 	
-	return error.innerHTML !== "";
+	return error.innerHTML === "";
 }
 
 function validateZip(form) {
@@ -77,13 +77,15 @@ function validateZip(form) {
 	
 	error.innerHTML = "";
 	
-	if (zip.length === null) {
+	if (zip.length === null || zip.length === 0) {
 		error.innerHTML = "Zip cannot be empty";
 	}
-	/*else if (zip.length !== 5) {
-		error.innerHTML = "Invalid Zip format";	
-	}*/
+	else if (isNaN(zip)) {
+		error.innerHTML = "Zip code must be a numeric value";
+	}
+	else if (zip.length !== 5) {
+		error.innerHTML = "Zip Code should be of 5 digits";
+	}
 	
-	
-	return error.innerHTML !== "";
+	return error.innerHTML === "";
 }

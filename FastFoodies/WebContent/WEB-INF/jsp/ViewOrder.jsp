@@ -41,13 +41,15 @@
 			<tr>
 				<th>Name</th>
 				<th>Card Number</th>
-				<th>Expiration Date</th>
+				<th>Expiration Month</th>
+				<th>Expiration Year</th>
 				<th>CVV</th>
 			</tr>
 			<tr>
 				<td><form:input path="cardHolderName" readonly="true" /></td>
 				<td><form:input path="creditCardNumber" readonly="true" /></td>
-				<td><form:input path="expirationDate" readonly="true" /></td>
+				<td><form:input path="expirationMonth" readonly="true" /></td>
+				<td><form:input path="expirationYear" readonly="true" /></td>
 				<td><form:input path="cvvCode" readonly="true" /></td>
 			</tr>
 		</table>

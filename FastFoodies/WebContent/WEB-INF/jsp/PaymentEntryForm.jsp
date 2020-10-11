@@ -31,9 +31,12 @@
 					<td><font id="numberError" style="color: red"></font></td> 
 				</tr>
 				<tr>
-					<td>Expiration Date*</td>
-					<td><form:input id="date" path="expirationDate" /></td>
-					<td><font id="dateError" style="color: red"></font></td> 
+					<td>Expiration Month*</td>
+					<td><form:input id="month" path="expirationMonth" /></td>
+					<td><font id="monthError" style="color: red"></font></td>
+					<td>Expiration Year*</td>
+					<td><form:input id="year" path="expirationYear" /></td>
+					<td><font id="yearError" style="color: red"></font></td>
 				</tr>
 				<tr>
 					<td>CVV Code*</td>
