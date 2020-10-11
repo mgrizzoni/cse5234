@@ -49,7 +49,7 @@
 					<td style="color: red">* indicates required value</td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" onclick="return validate()" value="Submit"></td>
+					<td colspan="2"><input type="submit" onclick="return validate()" value="Continue to checkout"></td>
 				</tr>
 			</table>
 		</form:form>
