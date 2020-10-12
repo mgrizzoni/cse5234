@@ -25,24 +25,26 @@
 	
 				<div class="col-50">
 		            <h4>Shipping Details</h4>
-		            <label for="cname">Full Name</label> <font id="nameError" style="color: red"></font>
+		            <label for="cname">Full Name*</label> <font id="nameError" style="color: red"></font>
 		            <form:input id="name" path="name" />
-		            <label for="caddLine1">Address Line 1</label> <font id="addressError" style="color: red"></font>
+		            <label for="caddLine1">Address Line 1*</label> <font id="addressError" style="color: red"></font>
 		            <form:input id="address" path="addressLine1" />
 		            <label for="caddLine2">Address Line 2</label>
 		            <form:input path="addressLine2" />
-		            <label for="cCity">City</label> <font id="cityError" style="color: red"></font>
+		            <label for="cCity">City*</label> <font id="cityError" style="color: red"></font>
 		            <form:input id="city" path="city" />
 		            <div class="row1">
 		              <div class="col-50">
-		                <label for="cState">State</label> <font id="stateError" style="color: red"></font>
+		                <label for="cState">State*</label> <font id="stateError" style="color: red"></font>
 		                <form:input id="state" path="state" />
 		              </div>
 		              <div class="col-50">
-		                <label for="cZip">Zip</label> <font id="zipError" style="color: red"></font>
+		                <label for="cZip">Zip*</label> <font id="zipError" style="color: red"></font>
 		                <form:input id="zip" path="zip" />
 		              </div>
 		            </div>
+		            <span><font style="color: red">* indicates required value</font></span>
+		            <br>
 		            <input type="submit" onclick="return validate()" value="Continue to checkout" class="btn">
           		</div>
          		</form:form>

@@ -31,22 +31,24 @@
 	
 				<div class="col-50">
 		            <h4>Payment Details</h4>
-		            <label for="cname">Name on Card</label> <font id="nameError" style="color: red"></font>
+		            <label for="cname">Name on Card*</label> <font id="nameError" style="color: red"></font>
 		            <form:input id="name" path="cardHolderName" />
-		            <label for="ccnum">Credit card number</label> <font id="numberError" style="color: red"></font>
+		            <label for="ccnum">Credit card number*</label> <font id="numberError" style="color: red"></font>
 		            <form:input id="number" path="creditCardNumber" />
-		            <label for="expmonth">Exp Month</label> <font id="monthError" style="color: red"></font>
+		            <label for="expmonth">Exp Month*</label> <font id="monthError" style="color: red"></font>
 		            <form:input id="month" path="expirationMonth" />
 		            <div class="row1">
 		              <div class="col-50">
-		                <label for="expyear">Exp Year</label> <font id="yearError" style="color: red"></font>
+		                <label for="expyear">Exp Year*</label> <font id="yearError" style="color: red"></font>
 		                <form:input id="year" path="expirationYear" />
 		              </div>
 		              <div class="col-50">
-		                <label for="cvv">CVV</label> <font id="codeError" style="color: red"></font>
+		                <label for="cvv">CVV*</label> <font id="codeError" style="color: red"></font>
 		                <form:input id="code" path="cvvCode" />
 		              </div>
 		            </div>
+		            <span><font style="color: red">* indicates required value</font></span>
+		            <br>
 		            <input type="submit" onclick="return validate()"value="Submit payment" class="btn">
           		</div>
          		</form:form>

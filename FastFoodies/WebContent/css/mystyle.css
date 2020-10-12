@@ -75,6 +75,7 @@ h4 {
 table {
 	width: 80%;
 	margin-top: 20px;
+	border-collapse:collapse;
 }
 
 td, td.center-col {
@@ -97,8 +98,8 @@ td.right-col {
 
 th {
 	padding: 2px;
-	color: #424242;
-	border:1pt solid #808080;
+	/*color: #424242;
+	border:1pt solid #808080;*/
 }
 
 
@@ -125,4 +126,14 @@ th {
 
 .confirmation {
 	text-align: center;
+}
+
+.temp {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  text-align:center;
+  justify-content:center;
 }

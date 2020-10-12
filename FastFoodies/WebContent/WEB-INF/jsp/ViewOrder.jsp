@@ -21,15 +21,15 @@
     <caption><b>Order Details:</b></caption>
 		<table>
    			<tr>
-    			<th>Item</th>
-    			<th>Price</th>
-    			<th>Quantity</th>
+    			<th style="text-align:center;">Item</th>
+    			<th style="text-align:center;">Price (In $)</th>
+    			<th style="text-align:center;">Quantity</th>
     		</tr>
 			<c:forEach items="${order.items}" var="item" varStatus="loop">
 				<tr>
-					<td><form:input path="items[${loop.index}].name" readonly="true" /></td>
-					<td><form:input path="items[${loop.index}].price" readonly="true" /></td>
-					<td><form:input path="items[${loop.index}].quantity" readonly="true" /></td>
+					<td style="text-align:center; border-collapse:collapse;"><form:input path="items[${loop.index}].name" readonly="true" cssClass="temp"/></td>
+					<td style="text-align:center; border-collapse:collapse;"><form:input path="items[${loop.index}].price" readonly="true" cssClass="temp"/></td>
+					<td style="text-align:center; border-collapse:collapse;"><form:input path="items[${loop.index}].quantity" readonly="true" cssClass="temp"/></td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Order Entry</title>
-<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<link rel="stylesheet" type="text/css" href="/FastFoodies/css/mystyle.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -43,22 +43,32 @@
     	<table>
     		<tr>
     			<th style="text-align:center;">Item</th>
-    			<th style="text-align:center;">Price</th>
+    			<th style="text-align:center;">Price (In $)</th>
     			<th style="text-align:center;">Quantity</th>
     		</tr>
 			<c:forEach items="${order.items}" var="item" varStatus="loop">
-				<tr>
-					<td class="center-col"><form:input id="name" path="items[${loop.index}].name" readonly="true" /></td>
-					<td class="center-col">$<form:input id="price" path="items[${loop.index}].price" readonly="true" /></td>
-					<td class="center-col">
+				<tr style="background-color: #f2f2f2;">
+					<td style="text-align:center; border-collapse:collapse;"><form:input id="name" path="items[${loop.index}].name" readonly="true" cssClass="temp"/></td>
+					<td style="text-align:center; border-collapse:collapse;"><form:input id="price" path="items[${loop.index}].price" readonly="true" cssClass="temp"/></td>
+					<td style="text-align:center; border-collapse:collapse;">
 						<!--  <button id="decrement">-</button>-->
-						<span><form:input id="quantity" path="items[${loop.index}].quantity" type=number min=100 max=110/></span>
+						<span><form:input id="quantity" path="items[${loop.index}].quantity" type=number min=100 max=110 cssClass="temp"/></span>
 						<!-- <button id="increment">+</button> -->
 					</td>
 				</tr>
 			</c:forEach>
+			<tr>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+	  		</tr>
 	  		<tr>
-				<td colspan="2"><input type="submit" value="Purchase"></td>
+	  		<td style="text-align:center;"></td>
+				<td style="text-align:center;"><input type="submit" value="Purchase"></td>
+				<td style="text-align:center;"></td>
 	  		</tr>
     	</table>
 	</form:form>
