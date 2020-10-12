@@ -12,7 +12,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<div style="justify-content:center; padding:5px;">
 		<br>
-		<h4 style="text-align: center">Welcome to Fast Foodies!</h4>
+		<h3 style="text-align: center">Welcome to Fast Foodies!</h3>
 		<br>
 		<br>
 		<div  id="image" style="text-content: center;">

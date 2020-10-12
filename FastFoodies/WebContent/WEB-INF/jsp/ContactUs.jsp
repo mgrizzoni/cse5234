@@ -10,12 +10,17 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<div class="inner">
-		<h5>Phani Kumar Atyam</h5>
-		<p>Email: <a href="mailto:atyam.1@osu.edu">atyam.1@osu.edu</a><br>Phone: (614) 648-1603</p>
+	<div class="inner1">
 		<br>
-		<h5>Michael Rizzoni</h5>
-		<p>Email: <a href="mailto:rizzoni.5@osu.edu">rizzoni.5@osu.edu</a><br>Phone: (614) 530-8909</p>
+		<br>
+		<div style="width:50%; padding: 100px;">
+		<h4 style="text-align: center">Phani Kumar Atyam</h4>
+		<p style="text-align: center">Email: <a href="mailto:atyam.1@osu.edu">atyam.1@osu.edu</a><br>Phone: (614) 648-1603</p>
+		</div>
+		<div style="width:50%; padding: 100px">
+		<h4 style="text-align: center">Michael Rizzoni</h4>
+		<p style="text-align: center">Email: <a href="mailto:rizzoni.5@osu.edu">rizzoni.5@osu.edu</a><br>Phone: (614) 530-8909</p>
+		</div>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

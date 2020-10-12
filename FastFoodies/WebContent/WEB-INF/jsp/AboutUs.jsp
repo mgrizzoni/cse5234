@@ -11,17 +11,18 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class="inner">
-		<h5>Phani Kumar Atyam</h5>
-		<h6 class="text-muted">Co-Founder</h6>
-		<p>Phani is currently pursuing his Master's degree in Computer Science and Engineering. Phani's interests mostly lie in developing web applications and has two years of work experience in software development. You can find him sketching or hanging out with friends when he's free!</p>
 		<br>
-		<h5>Michael Rizzoni</h5>
-		<h6 class="text-muted">Co-Founder</h6>
-		<p>Michael is a senior in Computer Science and Engineering at The Ohio State University. Michael has research experience in machine learning and is in his third year as a TA. When he's not hard at work, he's playing music, cooking, or watching TV with his roommates.</p>
+		<h4 style="text-align: center">Phani Kumar Atyam</h4>
+		<h6 class="text-muted" style="text-align: center">Co-Founder</h6>
+		<p style="text-align: center">Phani is currently pursuing his Master's degree in Computer Science and Engineering. Phani's interests mostly lie in developing web applications and has two years of work experience in software development. You can find him sketching or hanging out with friends when he's free!</p>
+		<br>
+		<h4 style="text-align: center">Michael Rizzoni</h4>
+		<h6 class="text-muted" style="text-align: center">Co-Founder</h6>
+		<p style="text-align: center">Michael is a senior in Computer Science and Engineering at The Ohio State University. Michael has research experience in machine learning and is in his third year as a TA. When he's not hard at work, he's playing music, cooking, or watching TV with his roommates.</p>
 	</div>
 	<br>
 	<div>
-	<p>You can access their contact details from the Contact page.</p>
+	<p style="text-align: center">You can access their contact details from the Contact page.</p>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

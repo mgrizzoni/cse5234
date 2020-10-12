@@ -57,6 +57,12 @@ h4 {
 	padding: 5px;
 }
 
+.inner1 {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
 .prodheading {
 	width: 100%;
 	height: 20px;
