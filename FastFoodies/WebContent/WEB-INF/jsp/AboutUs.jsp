@@ -19,6 +19,10 @@
 		<h6 class="text-muted">Co-Founder</h6>
 		<p>Michael is a senior in Computer Science and Engineering at The Ohio State University. Michael has research experience in machine learning and is in his third year as a TA. When he's not hard at work, he's playing music, cooking, or watching TV with his roommates.</p>
 	</div>
+	<br>
+	<div>
+	<p>You can access their contact details from the Contact page.</p>
+	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -10,10 +10,18 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<div class="inner">
+	<div style="justify-content:center; padding:5px;">
 		<br>
-		<p>Thank you for choosing Fast Foodies! Our mission is to deliver hot, fresh meals straight to your front door.</p>
-		<p>Select "Purchase" in the navigation menu to start your order now.</p>
+		<h4 style="text-align: center">Welcome to Fast Foodies!</h4>
+		<br>
+		<br>
+		<div  id="image" style="text-content: center;">
+		<img src="https://st.depositphotos.com/1005682/2476/i/450/depositphotos_24762569-stock-photo-fast-food-hamburger-hot-dog.jpg" alt="fast foods stock image"/>
+		</div>
+		<br>
+		<br>
+		<h6 style="text-align: center">Our mission is to deliver hot, fresh meals straight to your front door.</h6>
+		<p style="text-align: center">Select <b>Purchase</b> in the navigation menu to start your order now.</p>
 		<br>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>

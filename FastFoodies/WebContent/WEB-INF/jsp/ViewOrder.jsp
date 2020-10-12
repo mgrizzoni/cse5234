@@ -8,6 +8,8 @@
 <meta charset="ISO-8859-1">
 <title>View Order</title>
 <link rel="stylesheet" type="text/css" href="/FastFoodies/css/mystyle.css">
+<link rel="stylesheet" type="text/css" href="/FastFoodies/css/pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
@@ -26,63 +28,86 @@
 			<c:forEach items="${order.items}" var="item" varStatus="loop">
 				<tr>
 					<td><form:input path="items[${loop.index}].name" readonly="true" /></td>
-					<td>$<form:input path="items[${loop.index}].price" readonly="true" /></td>
+					<td><form:input path="items[${loop.index}].price" readonly="true" /></td>
 					<td><form:input path="items[${loop.index}].quantity" readonly="true" /></td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
 	</form:form> 
-	<form:form modelAttribute="payment" method="get" action="purchase/confirmation">
+	<div class="row">
+  		<div class="col-75">
+    		<div class="container">
+      			<form:form modelAttribute="payment" method="post" action="purchase/confirmation">
+	
+				<div class="col-50">
+		            <h4>Payment Details</h4>
+		            <label for="cname">Name on Card</label>
+		            <form:input id="name" path="cardHolderName" readonly="true"/>
+		            <label for="ccnum">Credit card number</label>
+		            <form:input id="number" path="creditCardNumber" readonly="true"/>
+		            <label for="expmonth">Exp Month</label>
+		            <form:input id="month" path="expirationMonth" readonly="true"/>
+		            <div class="row1">
+		              <div class="col-50">
+		                <label for="expyear">Exp Year</label>
+		                <form:input id="year" path="expirationYear" readonly="true"/>
+		              </div>
+		              <div class="col-50">
+		                <label for="cvv">CVV</label>
+		                <form:input id="code" path="cvvCode" readonly="true"/>
+		              </div>
+		            </div>
+          		</div>
+         		</form:form>
+         		
+         	</div>
+         </div>
+         
+         
+    </div>
+	
 	<br>
-	<div>
-		<caption><b>Payment Details:</b></caption>
-		<table>
-			<tr>
-				<th>Name</th>
-				<th>Card Number</th>
-				<th>Expiration Month</th>
-				<th>Expiration Year</th>
-				<th>CVV</th>
-			</tr>
-			<tr>
-				<td><form:input path="cardHolderName" readonly="true" /></td>
-				<td><form:input path="creditCardNumber" readonly="true" /></td>
-				<td><form:input path="expirationMonth" readonly="true" /></td>
-				<td><form:input path="expirationYear" readonly="true" /></td>
-				<td><form:input path="cvvCode" readonly="true" /></td>
-			</tr>
-		</table>
-	</div>
-	</form:form>
-	<form:form modelAttribute="shipping" method="get" action="purchase/confirmation">
-	<br>
-	<div>
-		<caption><b>Shipping Details:</b></caption>
-		<table>
-			<tr>
-				<th>Name</th>
-				<th>Address (Line 1)</th>
-				<th>Address (Line 2)</th>
-				<th>City</th>
-				<th>State</th>
-				<th>Zip</th>
-			</tr>
-			<tr>
-				<td><form:input path="name" readonly="true" /></td>
-				<td><form:input path="addressLine1" readonly="true" /></td>
-				<td><form:input path="addressLine2" readonly="true" /></td>
-				<td><form:input path="city" readonly="true" /></td>
-				<td><form:input path="state" readonly="true" /></td>
-				<td><form:input path="zip" readonly="true" /></td>
-			</tr>
-		</table>
-	</div>
-	<br>
-	</form:form>
+	<div class="row">
+  		<div class="col-75">
+    		<div class="container">
+      			<form:form modelAttribute="shipping" id="shipping" method="post" action="purchase/confirmation">
+	
+				<div class="col-50">
+		            <h4>Shipping Details</h4>
+		            <label for="cname">Full Name</label>
+		            <form:input id="name" path="name" readonly="true"/>
+		            <label for="caddLine1">Address Line 1</label>
+		            <form:input id="address" path="addressLine1" readonly="true"/>
+		            <label for="caddLine2">Address Line 2</label>
+		            <form:input path="addressLine2" readonly="true"/>
+		            <label for="cCity">City</label>
+		            <form:input id="city" path="city" readonly="true"/>
+		            <div class="row1">
+		              <div class="col-50">
+		                <label for="cState">State</label>
+		                <form:input id="state" path="state" readonly="true"/>
+		              </div>
+		              <div class="col-50">
+		                <label for="cZip">Zip</label>
+		                <form:input id="zip" path="zip" readonly="true"/>
+		              </div>
+		            </div>
+          		</div>
+         		</form:form>
+         		
+         	</div>
+         </div>
+         
+         
+    </div>
 	<form:form method="get" style="justify-content: center" action="confirmation">
-		<input type="submit" style="justify-content: center" value="Confirm order">
+	
+    <div class="col-25">
+		<input type="submit" style="justify-content: center" value="Confirm order" class="btn1">
+	</div>
 	</form:form>
+	
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

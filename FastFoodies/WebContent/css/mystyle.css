@@ -18,6 +18,11 @@ p {
 	margin-right: 20px;
 }
 
+h4 {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
 .header {
 	padding: 10px;
 	width: 100%;
@@ -28,6 +33,12 @@ p {
 
 .body {
 	margin: 10px;
+}
+
+#image img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .footer {
@@ -74,6 +85,11 @@ td.center-col {
 	text-align: center;
 }
 
+th.center-col {
+	text-align: center;
+	
+}
+
 td.right-col {
 	text-align: right;
 	padding-right: 15px;
@@ -85,10 +101,7 @@ th {
 	border:1pt solid #808080;
 }
 
-td.tot {
-	color: #424242;
-	border:1pt solid #808080;
-}
+
 .tableContainer {
 	padding-left: 20px;
 }
