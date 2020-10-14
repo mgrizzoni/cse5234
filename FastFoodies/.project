@@ -3,6 +3,7 @@
 	<name>FastFoodies</name>
 	<comment></comment>
 	<projects>
+		<project>FastFoodies-EJBClient</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
