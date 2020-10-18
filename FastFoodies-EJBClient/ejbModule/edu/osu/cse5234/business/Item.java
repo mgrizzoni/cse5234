@@ -1,7 +1,13 @@
-package edu.osu.cse5234.model;
+package edu.osu.cse5234.business;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1781726583312236780L;
 	private String name = null;
 	private String price = null;
 	private String quantity = null;
