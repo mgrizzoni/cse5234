@@ -1,5 +1,7 @@
 package edu.osu.cse5234.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -8,10 +10,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import edu.osu.cse5234.business.Inventory;
 import edu.osu.cse5234.business.Item;
 import edu.osu.cse5234.model.Order;
 import edu.osu.cse5234.model.PaymentInfo;
 import edu.osu.cse5234.model.ShippingInfo;
+import edu.osu.cse5234.util.ServiceLocator;
 
 @Controller
 @RequestMapping("/purchase")
@@ -21,21 +25,25 @@ public class Purchase {
 	public String viewOrderEntryForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		Order order = new Order();
 		
-		Item[] items = new Item[5];
-		for(int i = 0; i < 5; i++) {
-			items[i] = new Item();
-		}
-		items[0].setName("Hamburger");
-		items[0].setPrice("5.75");
-		items[1].setName("Cheeseburger");
-		items[1].setPrice("6.25");
-		items[2].setName("French Fries");
-		items[2].setPrice("1.75");
-		items[3].setName("Coca-Cola");
-		items[3].setPrice("1.00");
-		items[4].setName("Sprite");
-		items[4].setPrice("1.00");
+		Inventory currInventory = ServiceLocator.getInventoryService().getAvailableInventory();
 		
+		List<Item> items = currInventory.getItems();
+		
+//		Item[] items = new Item[5];
+//		for(int i = 0; i < 5; i++) {
+//			items[i] = new Item();
+//		}
+//		items[0].setName("Hamburger");
+//		items[0].setPrice("5.75");
+//		items[1].setName("Cheeseburger");
+//		items[1].setPrice("6.25");
+//		items[2].setName("French Fries");
+//		items[2].setPrice("1.75");
+//		items[3].setName("Coca-Cola");
+//		items[3].setPrice("1.00");
+//		items[4].setName("Sprite");
+//		items[4].setPrice("1.00");
+//		
 		order.setItems(items);
 		
 		request.setAttribute("order", order);
@@ -46,7 +54,17 @@ public class Purchase {
 	@RequestMapping(path = "/submitItems", method = RequestMethod.POST)
 	public String submitItems(@ModelAttribute("order") Order order, HttpServletRequest request) {
 		request.getSession().setAttribute("order", order);
-		return "redirect:/purchase/paymentEntry";		
+		
+		boolean isOrderValid = ServiceLocator.getOrderProcessingService().validateItemAvailability(order);
+		
+		if (isOrderValid == true) {
+			return "redirect:/purchase/paymentEntry";	
+		}
+		else {
+			request.getSession().setAttribute("message", "Please resubmit item quantities");
+			return "OrderEntryForm";
+		}
+			
 	}
 	
 	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)
@@ -83,6 +101,10 @@ public class Purchase {
 	
 	@RequestMapping(path = "/confirmOrder", method = RequestMethod.POST)
 	public String confirmOrder(HttpServletRequest request) {
+		Order order = (Order) request.getSession().getAttribute("order");
+		String confirmationID = ServiceLocator.getOrderProcessingService().processOrder(order);
+		
+		request.getSession().setAttribute("confirmationID", confirmationID);
 		return "redirect:/purchase/confirmation";
 	}
 	

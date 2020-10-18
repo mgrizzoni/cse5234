@@ -16,7 +16,7 @@
 	<br>
 <h2>Order Confirmed!</h2>
 <p>Thank you for choosing us to place your order.</p>
-<p>The confirmation number for your order is #52342020. 
+<p>The confirmation number for your order is <%= request.getAttribute("confirmationID") %>>. 
 A delivery representative will be assigned to your order soon.</p>
 </div>
 	<jsp:include page="footer.jsp"></jsp:include>

@@ -1,15 +1,17 @@
 package edu.osu.cse5234.model;
 
+import java.util.List;
+
 import edu.osu.cse5234.business.Item;
 
 public class Order {
-	private Item[] items = null;
-	
-	public Item[] getItems() {
-		return this.items;
+	private List<Item> items = null;
+
+	public List<Item> getItems() {
+		return items;
 	}
-	
-	public void setItems(Item[] items) {
+
+	public void setItems(List<Item> items) {
 		this.items = items;
 	}
 	
