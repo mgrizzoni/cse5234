@@ -3,6 +3,6 @@
   <runtime name="Liberty Runtime"/>
   <fixed facet="java"/>
   <fixed facet="jst.ejb"/>
-  <installed facet="java" version="10"/>
   <installed facet="jst.ejb" version="3.2"/>
+  <installed facet="java" version="1.8"/>
 </faceted-project>
