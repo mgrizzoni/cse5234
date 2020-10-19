@@ -21,7 +21,7 @@ public class ServiceLocator {
 	public static InventoryService getInventoryService() {
 		try {
 	         return (InventoryService) InitialContext.doLookup(
-					"java:global/FastFoodies-EJBEAR/FastFoodies-EJB/InventoryServiceBean!edu.osu.cse5234.business.view.InventoryService");
+					"java:global/FastFoodies/InventoryServiceBean!edu.osu.cse5234.business.InventoryService");
 		} catch (NamingException ne) {
 				throw new RuntimeException(ne);
 		}
