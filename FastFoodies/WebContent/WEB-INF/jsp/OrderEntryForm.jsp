@@ -58,7 +58,7 @@
 				</tr>
 			</c:forEach>
 			<tr>
-				<td><%= request.getAttribute("message") %>></td>
+				<td><%= request.getAttribute("message") %></td>
 			</tr>
 	  		<tr>
 				<td colspan="2"><input type="submit" value="Purchase"></td>

@@ -1,4 +1,4 @@
-package edu.osu.cse5234.controller;
+package controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

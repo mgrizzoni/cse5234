@@ -1,9 +1,13 @@
-package edu.osu.cse5234.business;
+package business;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+
+import business.Inventory;
+import business.InventoryService;
+import business.Item;
 
 /**
  * Session Bean implementation class InventoryServiceBean

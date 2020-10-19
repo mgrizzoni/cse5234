@@ -1,8 +1,8 @@
-package edu.osu.cse5234.model;
+package model;
 
 import java.util.List;
 
-import edu.osu.cse5234.business.Item;
+import business.Item;
 
 public class Order {
 	private List<Item> items = null;

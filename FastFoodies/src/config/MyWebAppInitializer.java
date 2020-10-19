@@ -1,4 +1,4 @@
-package edu.osu.cse5234.config;
+package config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

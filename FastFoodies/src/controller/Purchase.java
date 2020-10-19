@@ -1,4 +1,4 @@
-package edu.osu.cse5234.controller;
+package controller;
 
 import java.util.List;
 
@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import edu.osu.cse5234.business.Inventory;
-import edu.osu.cse5234.business.Item;
-import edu.osu.cse5234.model.Order;
-import edu.osu.cse5234.model.PaymentInfo;
-import edu.osu.cse5234.model.ShippingInfo;
-import edu.osu.cse5234.util.ServiceLocator;
+import business.Inventory;
+import business.Item;
+import model.Order;
+import model.PaymentInfo;
+import model.ShippingInfo;
+import util.ServiceLocator;
 
 @Controller
 @RequestMapping("/purchase")
@@ -29,21 +29,6 @@ public class Purchase {
 		
 		List<Item> items = currInventory.getItems();
 		
-//		Item[] items = new Item[5];
-//		for(int i = 0; i < 5; i++) {
-//			items[i] = new Item();
-//		}
-//		items[0].setName("Hamburger");
-//		items[0].setPrice("5.75");
-//		items[1].setName("Cheeseburger");
-//		items[1].setPrice("6.25");
-//		items[2].setName("French Fries");
-//		items[2].setPrice("1.75");
-//		items[3].setName("Coca-Cola");
-//		items[3].setPrice("1.00");
-//		items[4].setName("Sprite");
-//		items[4].setPrice("1.00");
-//		
 		order.setItems(items);
 		
 		request.setAttribute("order", order);

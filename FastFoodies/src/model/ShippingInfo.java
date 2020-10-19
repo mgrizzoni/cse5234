@@ -1,4 +1,4 @@
-package edu.osu.cse5234.model;
+package model;
 
 public class ShippingInfo {
 	private String name = null;

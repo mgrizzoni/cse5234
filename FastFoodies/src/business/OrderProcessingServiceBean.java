@@ -1,12 +1,13 @@
-package edu.osu.cse5234.business;
+package business;
 
 import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
-import edu.osu.cse5234.model.Order;
-import edu.osu.cse5234.util.ServiceLocator;
+import business.Item;
+import model.Order;
+import util.ServiceLocator;
 
 /**
  * Session Bean implementation class OrderProcessingServiceBean
