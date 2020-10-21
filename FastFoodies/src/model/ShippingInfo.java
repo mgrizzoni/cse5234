@@ -1,12 +1,22 @@
 package model;
 
 public class ShippingInfo {
+	
+	private int id;
 	private String name = null;
 	private String addressLine1 = null;
 	private String addressLine2 = null;
 	private String city = null;
 	private String state = null;
 	private String zip = null;
+	
+	public int getId() {
+		return this.id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	public String getName() {
 		return name;
