@@ -31,7 +31,7 @@ public class OrderProcessingServiceBean {
     	
     	boolean inventoryStatus = ServiceLocator.getInventoryService().updateInventory(items);
     	
-    	return "#52342020";
+    	return "12345";
     }
     
     public boolean validateItemAvailability(Order order) {
