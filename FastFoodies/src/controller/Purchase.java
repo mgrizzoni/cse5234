@@ -42,6 +42,7 @@ public class Purchase {
 			orderItem.setPrice(Double.parseDouble(item.getPrice()));
 			orderItem.setItemNumber(item.getItemNumber());
 			
+			orderItems.add(orderItem);
 		}
 		
 		order.setItems(orderItems);

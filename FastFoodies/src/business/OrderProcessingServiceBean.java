@@ -42,6 +42,8 @@ public class OrderProcessingServiceBean {
 			orderItem.setItemNumber(item.getItemNumber());
 			orderItem.setQuantity("" + item.getQuantity());
 			
+			items.add(orderItem);
+			
 		}
     	
     	boolean isOrderValid = ServiceLocator.getInventoryService().validateQuantity(items);

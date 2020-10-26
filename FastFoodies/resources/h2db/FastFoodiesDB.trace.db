@@ -1,6 +1,0 @@
-2020-10-21 18:26:33 jdbc[4]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE ITEM SET ITEM_NUMBER = '2' WH[*] WHERE NAME = 'Cheeseburger'"; SQL statement:
-UPDATE ITEM SET ITEM_NUMBER = '2' WH WHERE NAME = 'Cheeseburger' [42000-200]
-2020-10-21 18:26:50 jdbc[4]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found; SQL statement:
-Select * from ITEMS [42102-200]
