@@ -1,11 +1,14 @@
 package business;
 
+import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
 import business.Item;
+import model.LineItem;
 import model.Order;
 import util.ServiceLocator;
 
@@ -25,7 +28,21 @@ public class OrderProcessingServiceBean {
     
     public String processOrder(Order order) {
     	
-    	List<Item> items = order.getItems();
+    	List<LineItem> orderItems = order.getItems();
+    	
+    	List<Item> items = new ArrayList<Item>();
+    	
+    	for(LineItem item : orderItems) {
+			
+			Item orderItem = new Item();
+			
+			orderItem.setId(item.getId());
+			orderItem.setName(item.getName());
+			orderItem.setPrice(NumberFormat.getInstance().format(item.getPrice()));
+			orderItem.setItemNumber(item.getItemNumber());
+			orderItem.setQuantity("" + item.getQuantity());
+			
+		}
     	
     	boolean isOrderValid = ServiceLocator.getInventoryService().validateQuantity(items);
     	
@@ -36,7 +53,21 @@ public class OrderProcessingServiceBean {
     
     public boolean validateItemAvailability(Order order) {
     	
-    	List<Item> items = order.getItems();
+    	List<LineItem> orderItems = order.getItems();
+    	
+    	List<Item> items = new ArrayList<Item>();
+    	
+    	for(LineItem item : orderItems) {
+			
+			Item orderItem = new Item();
+			
+			orderItem.setId(item.getId());
+			orderItem.setName(item.getName());
+			orderItem.setPrice(NumberFormat.getInstance().format(item.getPrice()));
+			orderItem.setItemNumber(item.getItemNumber());
+			orderItem.setQuantity("" + item.getQuantity());
+			
+		}
     	
     	boolean status = ServiceLocator.getInventoryService().validateQuantity(items);
     	

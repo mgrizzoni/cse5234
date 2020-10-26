@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import business.Inventory;
 import business.Item;
+import model.LineItem;
 import model.Order;
 import model.PaymentInfo;
 import model.ShippingInfo;
@@ -29,7 +31,20 @@ public class Purchase {
 		
 		List<Item> items = currInventory.getItems();
 		
-		order.setItems(items);
+		List<LineItem> orderItems = new ArrayList<>();
+		
+		for(Item item : items) {
+			
+			LineItem orderItem = new LineItem();
+			
+			orderItem.setId(item.getId());
+			orderItem.setName(item.getName());
+			orderItem.setPrice(Double.parseDouble(item.getPrice()));
+			orderItem.setItemNumber(item.getItemNumber());
+			
+		}
+		
+		order.setItems(orderItems);
 		
 		request.setAttribute("order", order);
 		
