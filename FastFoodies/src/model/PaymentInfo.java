@@ -1,12 +1,35 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="PAYMENT_INFO")
+
 public class PaymentInfo {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ID")
 	private int id;
+	
+	@Column(name="ID")
 	private String creditCardNumber = null;
+	
+	@Column(name="ID")
 	private String expirationMonth = null;
+	
+	@Column(name="ID")
 	private String expirationYear = null;
+	
+	@Column(name="ID")
 	private String cvvCode = null;
+	
+	@Column(name="ID")
 	private String cardHolderName = null;
 	
 	public int getId() {

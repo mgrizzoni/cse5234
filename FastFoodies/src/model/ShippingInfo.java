@@ -1,13 +1,38 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="SHIPPING_INFO")
+
 public class ShippingInfo {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ID")
 	private int id;
+	
+	@Column(name="NAME")
 	private String name = null;
+	
+	@Column(name="ID")
 	private String addressLine1 = null;
+	
+	@Column(name="ID")
 	private String addressLine2 = null;
+	
+	@Column(name="CITY")
 	private String city = null;
+	
+	@Column(name="STATE")
 	private String state = null;
+	
+	@Column(name="ZIP")
 	private String zip = null;
 	
 	public int getId() {
