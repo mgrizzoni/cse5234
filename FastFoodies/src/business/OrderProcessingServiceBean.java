@@ -2,10 +2,13 @@ package business;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import business.Item;
 import model.LineItem;
@@ -22,7 +25,19 @@ public class OrderProcessingServiceBean {
     /**
      * Default constructor. 
      */
-    public OrderProcessingServiceBean() {
+	
+	@PersistenceContext
+	EntityManager entityManager;
+	
+    public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
+	public void setEntityManager(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
+
+	public OrderProcessingServiceBean() {
         // TODO Auto-generated constructor stub
     }
     
@@ -57,7 +72,7 @@ public class OrderProcessingServiceBean {
     	
     	List<LineItem> orderItems = order.getItems();
     	
-    	List<Item> items = new ArrayList<Item>();
+    	List<Item> currItems = new ArrayList<Item>();
     	
     	for(LineItem item : orderItems) {
 			
@@ -69,11 +84,31 @@ public class OrderProcessingServiceBean {
 			orderItem.setItemNumber(item.getItemNumber());
 			orderItem.setQuantity("" + item.getQuantity());
 			
+			currItems.add(orderItem);
+			
 		}
     	
-    	boolean status = ServiceLocator.getInventoryService().validateQuantity(items);
+    	Inventory currStock = ServiceLocator.getInventoryService().getAvailableInventory();
     	
-		return status;
+    	List<Item> itemsStock = currStock.getItems();
+    	
+    	Collections.sort(currItems, (a,b) -> a.getId() - b.getId());
+    	
+    	Collections.sort(itemsStock, (a,b) -> a.getId() - b.getId());
+    	
+    	for (int i = 0; i < currItems.size(); i++) {
+    		if (Integer.parseInt(currItems.get(i).getQuantity()) > Integer.parseInt(itemsStock.get(i).getQuantity())) {
+    			return false;
+    		}
+    	}
+    	
+    	entityManager.persist(order);
+    	
+    	entityManager.flush();
+    	
+//    	boolean status = ServiceLocator.getInventoryService().validateQuantity(currItems);
+    	
+		return true;
     }
 
 }
