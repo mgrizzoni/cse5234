@@ -17,19 +17,19 @@ public class PaymentInfo {
 	@Column(name="ID")
 	private int id;
 	
-	@Column(name="ID")
+	@Column(name="CARD_NUM")
 	private String creditCardNumber = null;
 	
-	@Column(name="ID")
+	@Column(name="EXP_MONTH")
 	private String expirationMonth = null;
 	
-	@Column(name="ID")
+	@Column(name="EXP_YEAR")
 	private String expirationYear = null;
 	
-	@Column(name="ID")
+	@Column(name="CVV")
 	private String cvvCode = null;
 	
-	@Column(name="ID")
+	@Column(name="HOLDER_NAME")
 	private String cardHolderName = null;
 	
 	public int getId() {

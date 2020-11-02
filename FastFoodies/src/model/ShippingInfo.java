@@ -20,10 +20,10 @@ public class ShippingInfo {
 	@Column(name="NAME")
 	private String name = null;
 	
-	@Column(name="ID")
+	@Column(name="ADDRESS1")
 	private String addressLine1 = null;
 	
-	@Column(name="ID")
+	@Column(name="ADDRESS2")
 	private String addressLine2 = null;
 	
 	@Column(name="CITY")
@@ -32,7 +32,7 @@ public class ShippingInfo {
 	@Column(name="STATE")
 	private String state = null;
 	
-	@Column(name="ZIP")
+	@Column(name="POSTAL_CODE")
 	private String zip = null;
 	
 	public int getId() {
