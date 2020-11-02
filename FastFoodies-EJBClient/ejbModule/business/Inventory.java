@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import java.util.*;
 
+import model.Item;
+
 public class Inventory implements Serializable {
 
 	/**

@@ -1,6 +1,9 @@
 package business;
 
 import javax.ejb.Remote;
+
+import model.Item;
+
 import java.util.*;
 
 @Remote
