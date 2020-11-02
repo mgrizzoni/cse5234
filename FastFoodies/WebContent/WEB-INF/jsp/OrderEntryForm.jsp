@@ -46,15 +46,13 @@
     			<th style="text-align:center;">Price</th>
     			<th style="text-align:center;">Quantity</th>
     		</tr>
-			<c:forEach items="${order.items}" var="item" varStatus="loop">
+			<c:forEach items="${inventory.items}" var="item" varStatus="loop">
 				<tr>
-					<td class="center-col"><form:input id="name" path="items[${loop.index}].name" readonly="true" /></td>
-					<td class="center-col">$<form:input id="price" path="items[${loop.index}].price" readonly="true" /></td>
-					<td class="center-col">
-						<!--  <button id="decrement">-</button>-->
-						<span><form:input id="quantity" path="items[${loop.index}].quantity" type=number min=100 max=110/></span>
-						<!-- <button id="increment">+</button> -->
-					</td>
+					<td><c:out value="${item.name}"></c:out></td>
+					<td><c:out value="$${item.unitPrice}"></c:out></td>
+					<td><form:input path="items[${loop.index}].quantity" /></td>
+					<td><form:hidden path="items[${loop.index}].name" value="${item.name}"/></td>
+					<td><form:hidden path="items[${loop.index}].price" value="${item.unitPrice}"/></td>
 				</tr>
 			</c:forEach>
 			<tr>

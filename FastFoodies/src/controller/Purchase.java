@@ -25,6 +25,7 @@ public class Purchase {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewOrderEntryForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
 		Order order = new Order();
 		
 		Inventory currInventory = ServiceLocator.getInventoryService().getAvailableInventory();
@@ -48,6 +49,8 @@ public class Purchase {
 		order.setItems(orderItems);
 		
 		request.setAttribute("order", order);
+		request.setAttribute("inventory", currInventory);
+
 		
 		return "OrderEntryForm";
 	}
@@ -104,6 +107,8 @@ public class Purchase {
 	public String confirmOrder(HttpServletRequest request) {
 		Order order = (Order) request.getSession().getAttribute("order");
 		String confirmationID = ServiceLocator.getOrderProcessingService().processOrder(order);
+		
+		
 		
 		request.getSession().setAttribute("confirmationID", confirmationID);
 		return "redirect:/purchase/confirmation";
