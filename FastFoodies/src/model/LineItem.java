@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="CUSTOMER_ORDER_LINE_ITEM")
@@ -17,13 +18,13 @@ public class LineItem {
 	@Column(name="ID")
 	private int id;
 	
-	@Column(name="ID")
+	@Column(name="ITEM_NUMBER")
 	private int itemNumber;
 	
 	@Column(name="ITEM_NAME")
 	private String name;
 	
-	@Column(name="PRICE")
+	@Transient
 	private double price;
 	
 	@Column(name="QUANTITY")

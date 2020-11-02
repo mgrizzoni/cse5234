@@ -4,7 +4,6 @@
 	<comment></comment>
 	<projects>
 		<project>FastFoodies-EJBClient</project>
-		<project>FastFoodies-EJB</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -13,7 +13,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import business.Item;
 
 @Entity
 @Table(name="CUSTOMER_ORDER")
@@ -33,24 +32,25 @@ public class Order {
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="CUSTOMER_ORDER_ID_FK")
-	private List<LineItem> items = null;
+	private List<LineItem> LineItems;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="SHIPPING_INFO_ID_FK")
-	private ShippingInfo shippingInfo = null;
+	private ShippingInfo shippingInfo;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="PAYMENT_INFO_ID_FK")
-	private PaymentInfo paymentInfo = null;
-
-	public List<LineItem> getItems() {
-		return items;
-	}
-
-	public void setItems(List<LineItem> items) {
-		this.items = items;
-	}
+	private PaymentInfo paymentInfo;
 	
+
+	public List<LineItem> getLineItems() {
+		return LineItems;
+	}
+
+	public void setLineItems(List<LineItem> lineItems) {
+		LineItems = lineItems;
+	}
+
 	public int getId() {
 		return this.id;
 	}

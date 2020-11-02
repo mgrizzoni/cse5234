@@ -10,7 +10,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import business.Item;
+import model.Item;
 import model.LineItem;
 import model.Order;
 import util.ServiceLocator;
@@ -43,34 +43,22 @@ public class OrderProcessingServiceBean {
     
     public String processOrder(Order order) {
     	
-    	List<LineItem> orderItems = order.getItems();
+    	boolean isOrderValid = validateItemAvailability(order);
     	
-    	List<Item> items = new ArrayList<Item>();
+    	if (!isOrderValid) {
+    		entityManager.persist(order);
+    		entityManager.flush();
+    		
+    		return "52342020";
+    	}
     	
-    	for(LineItem item : orderItems) {
-			
-			Item orderItem = new Item();
-			
-			orderItem.setId(item.getId());
-			orderItem.setName(item.getName());
-			orderItem.setPrice(NumberFormat.getInstance().format(item.getPrice()));
-			orderItem.setItemNumber(item.getItemNumber());
-			orderItem.setQuantity("" + item.getQuantity());
-			
-			items.add(orderItem);
-			
-		}
     	
-    	boolean isOrderValid = ServiceLocator.getInventoryService().validateQuantity(items);
-    	
-    	boolean inventoryStatus = ServiceLocator.getInventoryService().updateInventory(items);
-    	
-    	return "12345";
+    	return "Error!";
     }
     
     public boolean validateItemAvailability(Order order) {
     	
-    	List<LineItem> orderItems = order.getItems();
+    	List<LineItem> orderItems = order.getLineItems();
     	
     	List<Item> currItems = new ArrayList<Item>();
     	
