@@ -42,6 +42,7 @@ public class Purchase {
 		request.setAttribute("order", order);
 		request.setAttribute("inventory", currInventory);
 		request.getSession().setAttribute("inventory", currInventory);
+		request.getSession().setAttribute("message", "");
 		
 		return "OrderEntryForm";
 	}

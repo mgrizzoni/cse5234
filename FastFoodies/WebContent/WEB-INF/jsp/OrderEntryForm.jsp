@@ -60,7 +60,8 @@
 				<!-- <td><c:out value="${message}"></c:out></td> -->
 			</tr>
 	  		<tr>
-				  <td colspan="2"><input type="submit" value="Purchase"></td> <td style="color:red;"><c:out value="${message}"></c:out></td> 
+				  <td colspan="2"><input type="submit" value="Purchase"></td> 
+				  <td style="color:red;"><c:out value="${message}"></c:out></td> 
 	  		</tr>
     	</table>
 	</form:form>
