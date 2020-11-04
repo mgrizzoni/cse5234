@@ -16,7 +16,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="CUSTOMER_ORDER")
-
 public class Order {
 	
 	@Id
@@ -79,16 +78,16 @@ public class Order {
 		return this.paymentInfo;
 	}
 	
-	public void setPaymentInfo(PaymentInfo paymentInfo) {
-		this.paymentInfo = paymentInfo;
+	public void setPaymentInfo(PaymentInfo payment) {
+		this.paymentInfo = payment;
 	}
 	
 	public ShippingInfo getShippingInfo() {
 		return this.shippingInfo;
 	}
 	
-	public void setShippingInfo(ShippingInfo shippingInfo) {
-		this.shippingInfo = shippingInfo;
+	public void setShippingInfo(ShippingInfo shipping) {
+		this.shippingInfo = shipping;
 	}
 	
 }

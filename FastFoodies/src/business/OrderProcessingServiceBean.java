@@ -45,7 +45,7 @@ public class OrderProcessingServiceBean {
     	
     	boolean isOrderValid = validateItemAvailability(order);
     	
-    	if (!isOrderValid) {
+    	if (isOrderValid == true) {
     		entityManager.persist(order);
     		entityManager.flush();
     		

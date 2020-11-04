@@ -10,7 +10,6 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name="CUSTOMER_ORDER_LINE_ITEM")
-
 public class LineItem {
 	
 	@Id

@@ -16,7 +16,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class="inner">
 	<br>
-	<form:form modelAttribute="order" method="get" action="purchase/confirmation">
+	<form:form modelAttribute="order" method="post" action="confirmOrder">
     <div>
     <caption><b>Order Details:</b></caption>
 		<table>
@@ -25,10 +25,9 @@
     			<th>Price</th>
     			<th>Quantity</th>
     		</tr>
+    		<!-- <tr><td></td><td>Test</td></tr>-->
 			<c:forEach items="${order.getLineItems()}" var="item" varStatus="loop">
-				<tr>
-					
-					
+				<tr>					
 					<td>${item.name}</td>
 					<td>$${item.price}</td>
 					<td>${item.quantity}</td>
@@ -40,7 +39,7 @@
 	<div class="row">
   		<div class="col-75">
     		<div class="container">
-      			<form:form modelAttribute="payment" method="post" action="purchase/confirmation">
+      			<form:form modelAttribute="payment" method="post" action="confirmOrder">
 	
 				<div class="col-50">
 		            <h4>Payment Details</h4>
@@ -73,7 +72,7 @@
 	<div class="row">
   		<div class="col-75">
     		<div class="container">
-      			<form:form modelAttribute="shipping" id="shipping" method="post" action="purchase/confirmation">
+      			<form:form modelAttribute="shipping" id="shipping" method="post" action="confirmOrder">
 	
 				<div class="col-50">
 		            <h4>Shipping Details</h4>
@@ -103,11 +102,11 @@
          
          
     </div>
-	<form:form method="get" style="justify-content: center" action="confirmation">
+	<form:form method="post" style="justify-content: center" action="confirmOrder">
 	
-    <div class="col-25">
-		<input type="submit" style="justify-content: center" value="Confirm order" class="btn1">
-	</div>
+	    <div class="col-25">
+			<input type="submit" style="justify-content: center" value="Confirm order" class="btn1">
+		</div>
 	</form:form>
 	
 	</div>

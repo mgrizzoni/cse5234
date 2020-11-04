@@ -41,20 +41,24 @@ public class Purchase {
 		
 		request.setAttribute("order", order);
 		request.setAttribute("inventory", currInventory);
+		request.getSession().setAttribute("inventory", currInventory);
 		
 		return "OrderEntryForm";
 	}
 	
 	@RequestMapping(path = "/submitItems", method = RequestMethod.POST)
 	public String submitItems(@ModelAttribute("order") Order order, HttpServletRequest request) {
-//		request.getSession().setAttribute("order", order);
 		
 		boolean isOrderValid = ServiceLocator.getOrderProcessingService().validateItemAvailability(order);
 		
 		if (isOrderValid == true) {
+			request.getSession().setAttribute("order", order);
 			return "redirect:/purchase/paymentEntry";	
 		}
 		else {
+			Inventory curr = (Inventory) request.getSession().getAttribute("inventory");
+			System.out.println(curr.getItems().size());
+			request.getSession().setAttribute("inventory", curr);
 			request.getSession().setAttribute("order", order);
 			request.getSession().setAttribute("message", "Please resubmit item quantities");
 			return "OrderEntryForm";
@@ -76,7 +80,9 @@ public class Purchase {
 		order.setPaymentInfo(payment);
 		
 		request.getSession().setAttribute("payment", payment);
+		request.setAttribute("order", order);
 		request.getSession().setAttribute("order", order);
+		
 		return "redirect:/purchase/shippingEntry";	
 	}
 	
@@ -93,8 +99,12 @@ public class Purchase {
 		
 		order.setShippingInfo(shipping);
 		
+		order.setCustomerName(shipping.getName());
+		
 		request.getSession().setAttribute("shipping", shipping);
+		request.setAttribute("order", order);
 		request.getSession().setAttribute("order", order);
+
 		return "redirect:/purchase/viewOrder";
 	}
 	
@@ -104,19 +114,17 @@ public class Purchase {
 		request.setAttribute("payment", request.getSession().getAttribute("payment"));
 		request.setAttribute("order", request.getSession().getAttribute("order"));
 		
-		Inventory currInventory = ServiceLocator.getInventoryService().getAvailableInventory();
-		
-		request.setAttribute("inventory", currInventory);
-		
 		return "ViewOrder";
 	}
 	
 	@RequestMapping(path = "/confirmOrder", method = RequestMethod.POST)
 	public String confirmOrder(HttpServletRequest request) {
-		Order order = (Order) request.getSession().getAttribute("order");
-		String confirmationID = ServiceLocator.getOrderProcessingService().processOrder(order);
+		Order order = (Order) request.getSession().getAttribute("order");		
+
+		String confirmationID = (String) ServiceLocator.getOrderProcessingService().processOrder(order);
 		
 		request.getSession().setAttribute("confirmationID", confirmationID);
+		
 		return "redirect:/purchase/confirmation";
 	}
 	
