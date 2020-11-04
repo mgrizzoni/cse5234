@@ -83,7 +83,7 @@ public class Purchase {
 		request.setAttribute("order", order);
 		request.getSession().setAttribute("order", order);
 		
-		return "redirect:/purchase/shippingEntry";	
+		return "redirect:/purchase/shippingEntry";
 	}
 	
 	@RequestMapping(path = "/shippingEntry", method = RequestMethod.GET)

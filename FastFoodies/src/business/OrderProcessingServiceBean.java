@@ -90,12 +90,6 @@ public class OrderProcessingServiceBean {
     		}
     	}
     	
-    	entityManager.persist(order);
-    	
-    	entityManager.flush();
-    	
-//    	boolean status = ServiceLocator.getInventoryService().validateQuantity(currItems);
-    	
 		return true;
     }
 
