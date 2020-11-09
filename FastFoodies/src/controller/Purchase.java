@@ -28,7 +28,6 @@ public class Purchase {
 		
 		Inventory currInventory = ServiceLocator.getInventoryService().getAvailableInventory();
 		
-		
 		Order order = new Order();
 		
 		List<LineItem> lineItems = new ArrayList<LineItem>();
@@ -123,6 +122,8 @@ public class Purchase {
 		Order order = (Order) request.getSession().getAttribute("order");		
 
 		String confirmationID = (String) ServiceLocator.getOrderProcessingService().processOrder(order);
+		
+		
 		
 		request.getSession().setAttribute("confirmationID", confirmationID);
 		
